@@ -20,5 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/gate_1',[FirstGateController::class,'gateCallback']);
-Route::post('/gate_2',[SecondGateController::class,'gateCallback']);
+Route::prefix('/gate')->group(function () {
+    Route::post('/first',[FirstGateController::class,'gateCallback']);
+    Route::post('/second',[SecondGateController::class,'gateCallback']);
+});
