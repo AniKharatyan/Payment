@@ -31,7 +31,7 @@ class FirstGateAction
                 $this->result = 'You have limit expired, transaction will be done after 2 days';
             }
         } else {
-            $this->result = $this->paymentUseCase->run($data, 'GATE_1', env('APP_MERCHANT_KEY'), env("GATE_1_LIMIT"), );
+            $this->result = $this->paymentUseCase->run($data, 'GATE_1', env('APP_MERCHANT_KEY'), env("GATE_1_LIMIT"));
         }
 
         return $this->result;
